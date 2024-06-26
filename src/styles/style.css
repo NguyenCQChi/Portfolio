@@ -1,0 +1,158 @@
+body {
+  margin: 0px;
+  font-family: 'Times New Roman', serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  margin: 20px auto
+}
+
+.pulse {
+  animation: pulse 1.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.loadable {
+  border-radius: 11px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+img {
+  display: block;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root{
+  --swiper-navigation-size: 25px !important;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+.skeleton-box {
+  animation: skeleton-loading 1s linear infinite alternate; 
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+
+.active {
+  color: #991b1b !important;
+  text-underline-offset: 4px !important;
+  text-decoration: underline !important;
+}
+
+.link {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#000000, #000000);
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+}
+
+.link:hover {
+  cursor: pointer;
+  background-size: 100% 1.5px;
+  background-position: 0 100%;
+  text-underline-offset: 10px;
+}
+
+.shake-animation {
+  transform-origin: center;
+  animation: shake-animation 4500ms infinite;
+}
+
+.heading {
+  font-size: 28px;
+  font-style:italic
+}
+
+.flex_story {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 20px;
+  padding: 10px
+}
+
+@keyframes shake-animation {
+  0% { transform: rotate(0deg); }
+  8.0% { transform: rotate(0deg); }
+  12.0% { transform: rotate(42deg); }
+  16.0% { transform: rotate(-35deg); }
+  20.0% { transform: rotate(0deg); }
+  23.0% { transform: rotate(28deg); }
+  26.0% { transform: rotate(-20deg); }
+  29.0% { transform: rotate(0deg); }
+  31.0% { transform: rotate(16deg); }
+  33.0% { transform: rotate(-12deg); }
+  35.0% { transform: rotate(0deg); }	
+  37.0% { transform: rotate(-6deg); }
+  39.0% { transform: rotate(0deg); }
+  40.0% { transform: rotate(6deg); }
+  44.0% { transform: rotate(-3deg); }
+  49.0% { transform: rotate(2deg);}
+  55.0% { transform: rotate(0deg); }
+  62.0% { transform: rotate(1deg); }
+  70.0% { transform: rotate(0deg); }  
+}
+
+.fade-in {
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.typingAnimation {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+span {
+  opacity: 0;
+}
