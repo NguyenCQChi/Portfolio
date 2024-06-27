@@ -9,7 +9,7 @@ const Story = () => {
         </div>
         <div className="h-full py-36 px-40 flex-1">
           <div className="h-full flex flex-col justify-around" >
-            <div className="flex_story bg-orange">
+            <div className="flex_story bg-orange shadow-lg shadow-dark_orange">
               <div className="heading">
                 Communication
               </div>
@@ -20,7 +20,7 @@ const Story = () => {
                 also ensures that the end product exceeds expectaions, reflecting the project's goals.
               </div>  
             </div>
-            <div className="flex_story bg-orange">
+            <div className="flex_story bg-orange shadow-lg shadow-dark_orange">
               <div className="heading">
                 Persistence
               </div>

@@ -99,7 +99,8 @@ module.exports = {
           '800': '#991b1b',
           '900': '#40140E',
         },
-        'orange': '#E9A57D'
+        'orange': '#E9A57D',
+        'dark_orange': '#c4845e'
       },
       fontFamily: {
         'sans': ['Work Sans', ...defaultTheme.fontFamily.sans],

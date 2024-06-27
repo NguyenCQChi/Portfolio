@@ -19,7 +19,7 @@ const About = () => {
               <Typing headings={headings} />
             </div>
             <div>
-              <button className="bg-red-800 py-6 px-10 rounded-3xl text-red-100 text-xl w-1/2 border-black hover:translate-x-1 hover:-translate-y-1 transition-transform">
+              <button className="bg-red-800 shadow-lg shadow-red-900 py-6 px-10 rounded-3xl text-red-100 text-xl w-1/2 border-black hover:translate-x-1 hover:-translate-y-1 transition-transform">
                 <a href="Resume.pdf" download="Chi_Nguyen_resume">My Resume</a>
               </button>
             </div>
@@ -30,7 +30,7 @@ const About = () => {
               width={500}
               height={500}
               alt='Developer'
-              className='h-full w-fit rounded-3xl'
+              className='h-full w-fit rounded-3xl shadow-md shadow-black-400'
             />
           </div>
         </div>
