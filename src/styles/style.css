@@ -92,6 +92,22 @@ html {
   text-underline-offset: 10px;
 }
 
+.contact_link {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#ffffff, #ffffff);
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .3s ease-in-out;
+}
+
+.contact_link:hover {
+  cursor: pointer;
+  background-size: 100% 1.5px;
+  background-position: 0 100%;
+  text-underline-offset: 10px;
+}
+
 .shake-animation {
   transform-origin: center;
   animation: shake-animation 4500ms infinite;

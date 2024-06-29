@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import NavigationItem from '../NavigationItem';
 import cln from 'classnames';
 import { useRouter } from 'next/router';
+import { NavigationContext } from '@src/contexts/NavigationContext';
 
 type Props = {
   className?: string;
@@ -10,6 +11,11 @@ type Props = {
 
 const Navigation = ({ className, toggleDrawer } : Props) => {
   const router = useRouter();
+  const { section } = useContext(NavigationContext);
+
+  useEffect(() => {
+    console.log(section);
+  }, [section])
 
   return (
     <div className="w-full flex justify-center">
@@ -18,7 +24,6 @@ const Navigation = ({ className, toggleDrawer } : Props) => {
           <NavigationItem sectionName='#about' title='About' />
           <NavigationItem sectionName='#tech' title='Technologies' />
           <NavigationItem sectionName='#project' title='Project' />
-          <NavigationItem sectionName='#education' title='Education' />
           <NavigationItem sectionName='#contact' title='Contact' />
         </div>
       </div>

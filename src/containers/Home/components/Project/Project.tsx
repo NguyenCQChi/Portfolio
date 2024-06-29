@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import { ProjectCard } from '@src/components';
+import { NavigationContext } from "@src/contexts/NavigationContext";
 
 const Project = () => {
+  const containerRef = useRef(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const  { changeSection } = useContext(NavigationContext);
+
+  const callback = (entries: any) => {
+    const [ entry ] = entries;
+
+    if(entry.isIntersecting) {
+      changeSection('#project')
+    }
+  }
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    }
+
+    observerRef.current = new IntersectionObserver(callback, options);
+    if(containerRef.current) {
+      observerRef.current.observe(containerRef.current);
+    }
+
+    return () => {
+      if(containerRef.current) {
+        observerRef.current?.unobserve(containerRef.current);
+      }
+    }
+  }, [containerRef])
   return (
-    <div className="w-screen h-fit pt-32 px-32 pb-20 bg-white flex flex-col gap-10">
+    <div className="w-screen h-fit pt-32 px-32 pb-20 bg-white flex flex-col gap-10" ref={containerRef}>
       <div className="flex justify-center text-8xl" >Project</div>
       <div className="grid grid-cols-3 gap-10">
         <ProjectCard 

@@ -7,7 +7,22 @@ const Story = () => {
         <div className="h-full w-2/5">
           <img src="office_desk.avif" className="w-full h-full"/>
         </div>
-        <div className="h-full py-36 px-40 flex-1">
+        <div className="h-full py-20 px-40 flex-1 gap90 flex flex-col">
+          <div className="text-8xl mb-4">About Me</div>
+          <div className="flex flex-col gap-4 text-xl">
+            <div>
+              Hello, my name is Chi and I love solving problems! I am passionate about coding and mysteries
+              as both can provoke my curiosity and the urge to keep working and looking for them!
+            </div>
+            <div>
+              I am currently seeking software development roles. I am interested in frontend development,
+              cloud technologies and machine learning AI.
+            </div>
+            <div>
+              When I have free time, I love listening to music and drawing or crocheting. I am also recently
+              gotten into doing exercises to improve my health!
+            </div>
+          </div>
           <div className="h-full flex flex-col justify-around" >
             <div className="flex_story bg-orange shadow-lg shadow-dark_orange">
               <div className="heading">

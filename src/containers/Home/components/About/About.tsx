@@ -1,5 +1,7 @@
+import React, { useContext, useRef, useEffect } from 'react';
 import { Typing } from "@src/components";
 import Image from 'next/image';
+import { NavigationContext } from "@src/contexts/NavigationContext";
 
 const headings= [
   'Front-end Developer',
@@ -9,8 +11,39 @@ const headings= [
 ]
 
 const About = () => {
+  const containerRef = useRef(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const  { changeSection } = useContext(NavigationContext);
+
+  const callback = (entries: any) => {
+    const [ entry ] = entries;
+
+    if(entry.isIntersecting) {
+      changeSection('#about')
+    }
+  }
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    }
+
+    observerRef.current = new IntersectionObserver(callback, options);
+    if(containerRef.current) {
+      observerRef.current.observe(containerRef.current);
+    }
+
+    return () => {
+      if(containerRef.current) {
+        observerRef.current?.unobserve(containerRef.current);
+      }
+    }
+  }, [containerRef])
+
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen" ref={containerRef}>
       <div className="w-full h-full relative bg-red-100">
         <div className='top-0 left-0 text-black w-full h-full flex flex-row justify-center items-center z-20 absolute p-32'>
           <div className='h-1/3 w-full flex flex-col justify-center gap-10 ml-20'>
