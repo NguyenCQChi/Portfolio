@@ -26,7 +26,7 @@ const NavigationItem = ({ title, sectionName } : Props) => {
       smooth
       spy
       to={sectionName}
-      // offset={sectionName === '#contact' ? -300 : -140}
+      offset={sectionName === '#tech' ? -300 : 0}
       className='link'
       onSetActive={() => changeSection(sectionName)}
     >
