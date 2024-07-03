@@ -22,7 +22,6 @@ const NavigationProvider = (props: Props) => {
   const [section, setSection] = useState('');
 
   const changeSection = (section: string) => {
-    console.log(section)
     setSection(section);
   }
 

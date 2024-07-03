@@ -13,9 +13,9 @@ const Navigation = ({ className, toggleDrawer } : Props) => {
   const router = useRouter();
   const { section } = useContext(NavigationContext);
 
-  useEffect(() => {
-    console.log(section);
-  }, [section])
+  // useEffect(() => {
+  //   console.log(section + " 1");
+  // }, [section])
 
   return (
     <div className="w-full flex justify-center">

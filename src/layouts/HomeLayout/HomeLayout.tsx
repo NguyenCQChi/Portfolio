@@ -20,7 +20,6 @@ const HomeLayout = ({ className, children } : Props) => {
     <div className={cln(className, 'container flex flex-col')}>
       <NavigationProvider>
         <Navigation toggleDrawer={handleToggle} className='z-[30]' />
-        {/* <Drawe */}
         {children}
       </NavigationProvider>
     </div>

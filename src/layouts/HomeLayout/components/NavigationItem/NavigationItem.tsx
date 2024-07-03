@@ -9,27 +9,33 @@ type Props = {
 
 const NavigationItem = ({ title, sectionName } : Props) => {
   const { section, changeSection } = useContext(NavigationContext);
-  const [ className, setClassName ] = useState<string>('active')
+  const [ className, setClassName ] = useState<string>('')
 
   useEffect(() => {
-    if(sectionName === '#project' && section === '#contact') {
-      setClassName('link')
-    } else {
+    console.log("sectionName " + sectionName)
+    console.log("section " + section)
+    if(sectionName === section) {
       setClassName('active')
+    } else {
+      setClassName('link')
     }
-    console.log(section)
   }, [section])
+
+  const handleSetActive = () => {
+    console.log("Im in active")
+  }
   
   return (
     <Link
-      activeClass={className}
+      activeClass="active"
       duration={100}
       smooth
       spy
       to={sectionName}
       offset={sectionName === '#contact' ? -300 : -140}
-      className='link'
+      className="link"
       onSetActive={() => changeSection(sectionName)}
+      // onSetActive={handleSetActive}
     >
       {title}
     </Link>
