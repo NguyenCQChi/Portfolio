@@ -66,7 +66,7 @@ const Home = () => {
   }, [section])
 
   return (
-    <div className="bg-red-100 w-screen h-screen overflow-x-hidden">
+    <div className="bg-red-100 w-screen h-screen">
       <div id="#about">
         <About />
         <Story />
