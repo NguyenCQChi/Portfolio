@@ -1,26 +1,189 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg-void: #030A14;
+  --color-bg-deep: #061224;
+  --color-bg-nebula: #0A1A36;
+  --color-accent-blue: #0F2B5B;
+  --color-accent-violet: #7C3AED;
+  --color-accent-purple: #A855F7;
+  --color-accent-cyan: #22D3EE;
+  --color-accent-gold: #FBBF24;
+  --color-text-primary: #E8F1FA;
+  --color-text-muted: #7B8FA8;
+  --color-glow-cyan: rgba(34, 211, 238, 0.6);
+  --color-glow-violet: rgba(124, 58, 237, 0.5);
+  --color-glow-gold: rgba(251, 191, 36, 0.3);
 }
 
+/* ============================================
+   TAILWIND v4 THEME — maps tokens to utilities
+   ============================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-void: var(--color-bg-void);
+  --color-bg-deep: var(--color-bg-deep);
+  --color-bg-nebula: var(--color-bg-nebula);
+  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-violet: var(--color-accent-violet);
+  --color-accent-purple: var(--color-accent-purple);
+  --color-accent-cyan: var(--color-accent-cyan);
+  --color-accent-gold: var(--color-accent-gold);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-muted: var(--color-text-muted);
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-manrope);
+  --font-mono: var(--font-space-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   BASE STYLES
+   ============================================ */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-void);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Dot grid overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ============================================
+   LINKS & FOCUS
+   ============================================ */
+a {
+  color: var(--color-accent-cyan);
+  text-decoration: none;
+  transition: color 300ms ease;
+}
+
+a:hover {
+  color: var(--color-accent-purple);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 3px;
+}
+
+/* ============================================
+   SHOOTING STARS — CSS-only animation
+   ============================================ */
+.shooting-stars {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(34, 211, 238, 0.4), transparent);
+  transform: rotate(-35deg);
+  opacity: 0;
+  animation: shootingStar var(--duration, 1.5s) linear var(--delay, 0s) infinite;
+}
+
+.shooting-star:nth-child(1) { top: 8%; left: 85%; --duration: 1.2s; --delay: 2s; }
+.shooting-star:nth-child(2) { top: 22%; left: 70%; --duration: 1.8s; --delay: 7s; width: 140px; }
+.shooting-star:nth-child(3) { top: 45%; left: 90%; --duration: 1.4s; --delay: 12s; }
+.shooting-star:nth-child(4) { top: 65%; left: 75%; --duration: 1.6s; --delay: 18s; width: 80px; }
+
+@keyframes shootingStar {
+  0% { transform: rotate(-35deg) translateX(0); opacity: 0; }
+  5% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(-35deg) translateX(-600px); opacity: 0; }
+}
+
+/* ============================================
+   LOGO PULSE
+   ============================================ */
+@keyframes logoPulse {
+  0%, 100% { opacity: 1; text-shadow: 0 0 8px rgba(34, 211, 238, 0.4); }
+  50% { opacity: 0.7; text-shadow: 0 0 16px rgba(34, 211, 238, 0.8); }
+}
+
+/* ============================================
+   TERMINAL CURSOR BLINK
+   ============================================ */
+@keyframes cursorBlink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+/* ============================================
+   SCROLL HINT BOUNCE
+   ============================================ */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ============================================
+   SKIP-TO-CONTENT
+   ============================================ */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 24px;
+  background: var(--color-accent-violet);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  transition: top 200ms ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   BUTTON HOVER GLOW
+   ============================================ */
+.btn-primary {
+  transition: transform 250ms ease, box-shadow 250ms ease, background-color 250ms ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(124,58,237,0.5), 0 4px 30px rgba(124,58,237,0.3);
+}
+.btn-ghost {
+  transition: transform 250ms ease, background-color 250ms ease, border-color 250ms ease;
+}
+.btn-ghost:hover {
+  background: rgba(15,43,91,0.3);
+  border-color: var(--color-accent-cyan);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .shooting-stars { display: none; }
 }
