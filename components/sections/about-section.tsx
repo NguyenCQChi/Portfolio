@@ -28,18 +28,22 @@ export default function AboutSection() {
           {/* Bio */}
           <motion.div variants={fadeInUp}>
             <p className="text-lg leading-relaxed text-text-muted">
-              I&apos;m a{" "}
-              <strong className="text-accent-cyan">frontend engineer</strong> who
-              believes the web should feel alive. My work sits at the intersection
-              of <em>design</em> and <em>engineering</em> — crafting{" "}
+              I&apos;m an <strong className="text-accent-cyan">engineer</strong>{" "}
+              who believes the web should feel alive. My work sits at the
+              intersection of <em>design</em> and <em>engineering</em> —
+              crafting{" "}
               <strong className="text-accent-cyan">interactive UIs</strong>,{" "}
               <strong className="text-accent-cyan">design systems</strong>, and
               smooth animations that put users first.
             </p>
+
             <p className="mt-4 text-lg leading-relaxed text-text-muted">
-              When I&apos;m not pushing pixels, you&apos;ll find me stargazing,
-              sketching UI concepts, or contributing to open-source accessibility
-              tools.
+              I enjoy solving real-world problems through code, whether that
+              means designing data-driven applications, improving performance,
+              or turning complex ideas into intuitive experiences. When I&apos;m
+              not coding, you&apos;ll usually find me stargazing, exploring new
+              technologies, sketching UI concepts, or working on side projects
+              that help me grow as an engineer.
             </p>
           </motion.div>
 

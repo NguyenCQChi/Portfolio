@@ -26,13 +26,13 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cassandra Nguyen | Frontend Developer",
+  title: "Chi Nguyen | Frontend Developer",
   description:
-    "Creative frontend developer specializing in interactive UIs, design systems, and web animations. Building beautiful, accessible experiences.",
+    "Creative developer specializing in interactive UIs, design systems, and web animations. Building beautiful, accessible experiences.",
   openGraph: {
-    title: "Cassandra Nguyen | Frontend Developer",
+    title: "Chi Nguyen | Frontend Developer",
     description:
-      "Creative frontend developer specializing in interactive UIs, design systems, and web animations.",
+      "Creative developer specializing in interactive UIs, design systems, and web animations.",
     type: "website",
   },
 };

@@ -16,7 +16,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-4 py-32 md:px-8 lg:grid-cols-[1.4fr_1fr]">
+      <div className="relative mx-auto grid max-w-300 grid-cols-1 items-center gap-12 px-4 py-32 md:px-8 lg:grid-cols-[1.4fr_1fr]">
         {/* Text column */}
         <div className="flex flex-col gap-6">
           {/* Greeting label */}
@@ -30,15 +30,15 @@ export default function HeroSection() {
           {/* Heading */}
           <h1 className="font-heading text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
             I craft interfaces that feel like{" "}
-            <span className="bg-gradient-to-r from-accent-cyan to-accent-violet bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-accent-cyan to-accent-violet bg-clip-text text-transparent">
               magic
             </span>
           </h1>
 
           {/* Tagline */}
           <p className="max-w-md text-lg leading-relaxed text-text-muted">
-            <strong className="text-text-primary">Cassandra Nguyen</strong> — frontend
-            engineer turning ideas into interactive, accessible, and delightful web
+            <strong className="text-text-primary">Chi Nguyen</strong> — frontend
+            engineer and software engineer turning ideas into interactive, accessible, and delightful web
             experiences.
           </p>
 

@@ -31,7 +31,14 @@ export default function ContactSection() {
           variants={fadeInUp}
           className="flex items-center justify-center gap-2 font-mono text-xs uppercase tracking-widest text-text-muted mb-4"
         >
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" className="text-accent-gold" aria-hidden="true">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            className="text-accent-gold"
+            aria-hidden="true"
+          >
             <path d="M8 0l2.1 5.3L16 6.2l-4.2 3.8 1.2 5.8L8 12.8l-5 3 1.2-5.8L0 6.2l5.9-.9z" />
           </svg>
           {"// Contact"}
@@ -50,22 +57,29 @@ export default function ContactSection() {
         </motion.h2>
 
         {/* Subtext */}
-        <motion.p
-          variants={fadeInUp}
-          className="text-lg text-text-muted mb-8"
-        >
-          Got an exciting project, a wild idea, or just want to say hi?
-          I&apos;d love to hear from you.
+        <motion.p variants={fadeInUp} className="text-lg text-text-muted mb-8">
+          Got an exciting project, a wild idea, or just want to say hi? I&apos;d
+          love to hear from you.
         </motion.p>
 
         {/* CTA button */}
         <motion.div variants={fadeInUp} className="mb-10">
           <a
-            href="mailto:cassandra@example.com"
+            href="mailto:chinsu190103@gmail.com"
             className="btn-primary inline-flex items-center gap-2 rounded-lg bg-accent-violet px-8 py-4 text-lg font-semibold text-white"
           >
             Launch a Conversation
-            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
               <path d="M3 8h10M9 4l4 4-4 4" />
             </svg>
           </a>
@@ -93,8 +107,11 @@ export default function ContactSection() {
         {/* Email fallback */}
         <motion.p variants={fadeInUp} className="text-sm text-text-muted">
           or beam me at{" "}
-          <a href="mailto:cassandra@example.com" className="text-accent-cyan hover:text-accent-purple">
-            cassandra@example.com
+          <a
+            href="mailto:chinsu190103@gmail.com"
+            className="text-accent-cyan hover:text-accent-purple"
+          >
+            chinsu190103@gmail.com
           </a>
         </motion.p>
       </motion.div>
