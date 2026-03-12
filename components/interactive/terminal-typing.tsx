@@ -42,12 +42,12 @@ export default function TerminalTyping() {
         <span className="h-3 w-3 rounded-full bg-[#FFBD2E]" />
         <span className="h-3 w-3 rounded-full bg-[#27C93F]" />
         <span className="ml-3 text-xs font-mono text-text-muted">
-          ~/cassandra/portfolio
+          ~/chi_nguyen/portfolio
         </span>
       </div>
 
       {/* Terminal body */}
-      <div className="bg-[#0A0E17] p-5 min-h-[180px]">
+      <div className="bg-[#0A0E17] p-5 min-h-45">
         <pre className="font-mono text-sm leading-relaxed text-accent-cyan whitespace-pre-wrap break-words">
           {TERMINAL_CODE.slice(0, displayedLength)}
           {isTyping && (
